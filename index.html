@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #espaco{
+            background-color: gray;
+            width: 150px;
+            height: 100%;
+            border: solid black 1px;
+            text-align: center;
+            color: white;
+            border-radius: 7px;
+            margin: 0;
+            padding: 0;
+            font-size: 25pt;
+        }
+
+        body{
+            margin: 0;
+            
+        }
+    </style>
+</head>
+<body>
+
+    <div id="espaco">
+
+    </div>
+    
+
+
+    <script>
+
+        
+            console.log('ola')
+
+            setInterval(function(){
+                let espaco = document.querySelector("#espaco")
+
+                
+                espaco.innerText = horario();
+
+
+                
+            },1000)
+
+        
+
+        function horario(){
+            
+            //let time = data.getTimezoneOffset()
+            let data = new Date();
+            let hora = data.getHours()
+            let minuto = data.getMinutes()
+            if(minuto < 10){
+                minuto = `0${minuto}`
+            }
+
+            let segundo = data.getSeconds()
+
+            if(segundo < 10){
+                segundo = `0${segundo}`
+            }
+
+            return `${hora}:${minuto}:${segundo}`;
+
+
+        }
+
+
+
+    </script>
+</body>
+</html>
